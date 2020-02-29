@@ -1,0 +1,47 @@
+{
+    "config": {
+        "num_agents": 1000,
+        "calc_obstat_prob": 0.01,
+        "episodes_per_batch": 100,
+        "eval_prob": 0.000,
+        "l2coeff": 0.005,
+        "noise_stdev": 0.02,
+        "snapshot_freq": 10000,
+        "timesteps_per_batch": 100000,
+        "return_proc_mode": "centered_rank",
+        "episode_cutoff_mode": "env_default",
+        "num_threads": 120,
+        "broadcast_prob": 0.2
+    },
+    "env_id": "RoboschoolHumanoid-v1",
+    "exp_prefix": "humanoid",
+    "optimizer": {
+        "args": {
+            "stepsize": 0.01
+        },
+        "type": "adam"
+    },
+    "policy": {
+        "args": {
+            "ac_bins": "continuous:",
+            "ac_noise_std": 0.01,
+            "connection_type": "ff",
+            "hidden_dims": [
+                256,
+                256
+            ],
+            "nonlin_type": "tanh"
+        },
+        "type": "MujocoPolicy"
+    },
+    "agent_update": {
+        "strategy": "Neighborhood",
+        "args": {
+            "network_type": "erdos_renyi",
+            "network_args": {"p": 0.1},
+            "network_file": "erdos_n_1000_p_0.1.pickle",
+            "comms_noise_stdev": 0.001,
+            "return_proc_mode": "centered_rank"
+        }
+    }
+}

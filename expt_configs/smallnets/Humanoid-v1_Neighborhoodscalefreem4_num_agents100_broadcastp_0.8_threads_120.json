@@ -1,0 +1,53 @@
+{
+    "exp_prefix": "humanoid",
+    "config": {
+        "episode_cutoff_mode": "env_default",
+        "broadcast_prob": 0.8,
+        "timesteps_per_batch": 100000,
+        "episodes_per_batch": 100,
+        "experiment_group_name": "mujoco_smallnets",
+        "noise_stdev": 0.02,
+        "eval_prob": 0.0,
+        "calc_obstat_prob": 0.01,
+        "l2coeff": 0.005,
+        "experiments_filename": "Humanoid-v1_Neighborhoodscalefreem4_num_agents100_broadcastp_0.9_threads_120.json",
+        "num_threads": 120,
+        "return_proc_mode": "centered_rank",
+        "snapshot_freq": 10000,
+        "num_agents": 100
+    },
+    "policy": {
+        "args": {
+            "nonlin_type": "tanh",
+            "hidden_dims": [
+                256,
+                256
+            ],
+            "ac_bins": "continuous:",
+            "ac_noise_std": 0.01,
+            "connection_type": "ff"
+        },
+        "type": "MujocoPolicy"
+    },
+    "agent_update": {
+        "args": {
+            "network_file": "scale_free_100_m4_seed10.pickle",
+            "network_args": {
+                "p": "m4"
+            },
+            "comms_noise_stdev": 0.001,
+            "network_type": "scalefree",
+            "return_proc_mode": "centered_rank"
+        },
+        "comms_noise_stdev": 0.001,
+        "strategy": "Neighborhood",
+        "return_proc_mode": "centered_rank"
+    },
+    "env_id": "Humanoid-v1",
+    "optimizer": {
+        "args": {
+            "stepsize": 0.01
+        },
+        "type": "adam"
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "agent_update": {
+        "comms_noise_stdev": 0.001,
+        "return_proc_mode": "centered_rank",
+        "strategy": "Neighborhood",
+        "args": {
+            "network_args": {
+                "p": "selfloop"
+            },
+            "network_type": "selfloop",
+            "comms_noise_stdev": 0.001,
+            "return_proc_mode": "centered_rank",
+            "network_file": "self_loop_1000.pickle"
+        }
+    },
+    "config": {
+        "eval_prob": 0.0,
+        "timesteps_per_batch": 100000,
+        "snapshot_freq": 50,
+        "calc_obstat_prob": 0.01,
+        "experiments_filename": "Neighborhood_selfloop_pselfloop_num_agents1000_broadcastp_0.5_threads_120.json",
+        "experiment_group_name": "selfloop",
+        "broadcast_prob": 0.5,
+        "return_proc_mode": "centered_rank",
+        "num_agents": 1000,
+        "l2coeff": 0.005,
+        "noise_stdev": 0.02,
+        "episode_cutoff_mode": "env_default",
+        "num_threads": 120,
+        "episodes_per_batch": 100
+    },
+    "exp_prefix": "humanoid",
+    "policy": {
+        "type": "MujocoPolicy",
+        "args": {
+            "ac_noise_std": 0.01,
+            "ac_bins": "continuous:",
+            "connection_type": "ff",
+            "nonlin_type": "tanh",
+            "hidden_dims": [
+                256,
+                256
+            ]
+        }
+    },
+    "optimizer": {
+        "type": "adam",
+        "args": {
+            "stepsize": 0.01
+        }
+    },
+    "env_id": "RoboschoolHumanoid-v1"
+}

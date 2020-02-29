@@ -1,0 +1,53 @@
+{
+    "config": {
+        "num_agents": 1000,
+        "eval_prob": 0.0,
+        "num_threads": 120,
+        "experiments_filename": "Hopper-v1_Neighborhooderdos0.2_num_agents1000_broadcastp_0.8_threads_120.json",
+        "experiment_group_name": "mujoco_erdos",
+        "noise_stdev": 0.02,
+        "timesteps_per_batch": 100000,
+        "episode_cutoff_mode": "env_default",
+        "calc_obstat_prob": 0.01,
+        "snapshot_freq": 10000,
+        "broadcast_prob": 0.8,
+        "l2coeff": 0.005,
+        "return_proc_mode": "centered_rank",
+        "episodes_per_batch": 100
+    },
+    "exp_prefix": "humanoid",
+    "env_id": "Hopper-v1",
+    "agent_update": {
+        "return_proc_mode": "centered_rank",
+        "args": {
+            "network_type": "erdos",
+            "return_proc_mode": "centered_rank",
+            "network_args": {
+                "p": 0.2
+            },
+            "network_file": "erdos_n_1000_p_0.2.pickle",
+            "comms_noise_stdev": 0.001
+        },
+        "strategy": "Neighborhood",
+        "comms_noise_stdev": 0.001
+    },
+    "policy": {
+        "type": "MujocoPolicy",
+        "args": {
+            "hidden_dims": [
+                256,
+                256
+            ],
+            "ac_bins": "continuous:",
+            "nonlin_type": "tanh",
+            "connection_type": "ff",
+            "ac_noise_std": 0.01
+        }
+    },
+    "optimizer": {
+        "type": "adam",
+        "args": {
+            "stepsize": 0.01
+        }
+    }
+}

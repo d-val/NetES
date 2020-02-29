@@ -1,0 +1,83 @@
+name: es-network
+channels:
+- conda-forge
+- defaults
+dependencies:
+- awscli=1.11.63=py35_0
+- botocore=1.5.26=py35_0
+- ca-certificates=2017.4.17=0
+- certifi=2017.4.17=py35_0
+- colorama=0.3.7=py35_0
+- docutils=0.13.1=py35_0
+- jmespath=0.9.2=py35_0
+- mock=2.0.0=py35_0
+- ncurses=5.9=10
+- openssl=1.0.2k=0
+- pbr=3.0.1=py35_0
+- pip=9.0.1=py35_0
+- protobuf=3.0.0=py35_0
+- pyasn1=0.2.3=py35_0
+- pyopengl=3.1.0=py35_0
+- python=3.5.3=3
+- python-dateutil=2.6.0=py35_0
+- pyyaml=3.12=py35_1
+- readline=6.2=0
+- rsa=3.4.2=py35_0
+- s3transfer=0.1.10=py35_1
+- setuptools=33.1.1=py35_0
+- six=1.10.0=py35_1
+- sqlite=3.13.0=1
+- tensorflow=0.11.0=py35_0
+- tk=8.5.19=1
+- wheel=0.29.0=py35_0
+- xz=5.2.2=0
+- yaml=0.1.6=0
+- zlib=1.2.11=0
+- hdf5=1.8.17=1
+- jbig=2.1=0
+- jpeg=8d=2
+- libgfortran=3.0.0=1
+- libpng=1.6.27=0
+- libtiff=4.0.6=2
+- mkl=2017.0.1=0
+- numpy=1.12.1=py35_0
+- opencv=3.1.0=np112py35_1
+- redis=3.2.0=0
+- scipy=0.19.0=np112py35_0
+- pip:
+  - attrs==17.2.0
+  - autobahn==17.6.1
+  - automat==0.6.0
+  - chardet==3.0.4
+  - click==6.7
+  - constantly==15.1.0
+  - dill==0.2.7.1
+  - docker-py==1.10.3
+  - docker-pycreds==0.2.1
+  - fastzbarlight==0.0.14
+  - go-vncdriver==0.4.19
+  - gym==0.9.1
+  - h5py==2.7.0
+  - hyperlink==17.1.1
+  - idna==2.5
+  - incremental==17.5.0
+  - multiprocess==0.70.5
+  - olefile==0.44
+  - pandas==0.20.3
+  - pathos==0.2.1
+  - pillow==4.1.1
+  - pox==0.2.3
+  - ppft==1.6.4.7.1
+  - pyglet==1.2.4
+  - pytz==2017.2
+  - requests==2.18.1
+  - thefuck==3.16
+  - twisted==17.5.0
+  - txaio==2.8.0
+  - ujson==1.35
+  - universe==0.21.3
+  - urllib3==1.21.1
+  - websocket-client==0.40.0
+  - zope.interface==4.4.2
+prefix: /home/anon/miniconda3/envs/es-network
+

@@ -1,0 +1,53 @@
+{
+    "exp_prefix": "humanoid",
+    "env_id": "HalfCheetah-v1",
+    "config": {
+        "episodes_per_batch": 100,
+        "timesteps_per_batch": 100000,
+        "num_agents": 100,
+        "return_proc_mode": "centered_rank",
+        "noise_stdev": 0.02,
+        "num_threads": 120,
+        "experiment_group_name": "mujoco_smallnets",
+        "broadcast_prob": 0.0,
+        "experiments_filename": "HalfCheetah-v1_Neighborhoodfully-connected_num_agents100_broadcastp_0.0_threads_120.json",
+        "l2coeff": 0.005,
+        "snapshot_freq": 10000,
+        "calc_obstat_prob": 0.01,
+        "eval_prob": 0.0,
+        "episode_cutoff_mode": "env_default"
+    },
+    "policy": {
+        "args": {
+            "connection_type": "ff",
+            "nonlin_type": "tanh",
+            "ac_noise_std": 0.01,
+            "ac_bins": "continuous:",
+            "hidden_dims": [
+                256,
+                256
+            ]
+        },
+        "type": "MujocoPolicy"
+    },
+    "optimizer": {
+        "args": {
+            "stepsize": 0.01
+        },
+        "type": "adam"
+    },
+    "agent_update": {
+        "args": {
+            "comms_noise_stdev": 0.001,
+            "network_type": "fully-connected",
+            "return_proc_mode": "centered_rank",
+            "network_file": "fully_100.pickle",
+            "network_args": {
+                "p": ""
+            }
+        },
+        "comms_noise_stdev": 0.001,
+        "return_proc_mode": "centered_rank",
+        "strategy": "Neighborhood"
+    }
+}
